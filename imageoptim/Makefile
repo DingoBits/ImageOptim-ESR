@@ -1,5 +1,5 @@
 HELPINDEXES=$(addsuffix Help.helpindex, $(wildcard *.lproj/Help/))
-SUBMODULES=../Sparkle/Sparkle ../svgcleaner/src
+SUBMODULES=../svgcleaner/src
 
 build: all
 
@@ -9,8 +9,7 @@ $(SUBMODULES): ../.gitmodules
 	../scripts/fetch-submodule $(shell dirname $@) && touch $@
 
 pngout:
-	curl -L https://www.jonof.id.au/files/kenutils/pngout-20150920-darwin.tar.gz | tar xz
-	mv pngout-20150920-darwin/pngout pngout
+	curl -L https://www.jonof.id.au/files/kenutils/pngout-20200115-linux-static.tar.gz | tar xz --strip-components-1
 
 clean:
 	-rm -rf pngout

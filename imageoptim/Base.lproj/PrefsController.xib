@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13770" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="21225" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13770"/>
-        <capability name="box content view" minToolsVersion="7.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21225"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,11 +14,11 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <window title="ImageOptim Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" showsToolbarButton="NO" frameAutosaveName="Prefs" animationBehavior="default" id="5" userLabel="Window">
+        <window title="ImageOptim Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" frameAutosaveName="Prefs" animationBehavior="default" id="5" userLabel="Window">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="173" y="531" width="663" height="376"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
             <value key="minSize" type="size" width="663" height="361"/>
             <value key="maxSize" type="size" width="790" height="371"/>
             <view key="contentView" id="6">
@@ -36,9 +35,9 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <box title="Writing files to disk" translatesAutoresizingMaskIntoConstraints="NO" id="280">
-                                            <rect key="frame" x="148" y="37" width="460" height="93"/>
+                                            <rect key="frame" x="146" y="36" width="462" height="94"/>
                                             <view key="contentView" id="7wB-OY-t5Z">
-                                                <rect key="frame" x="2" y="2" width="456" height="76"/>
+                                                <rect key="frame" x="3" y="3" width="456" height="76"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1121">
@@ -53,7 +52,7 @@
                                                         </textFieldCell>
                                                     </textField>
                                                     <button translatesAutoresizingMaskIntoConstraints="NO" id="184">
-                                                        <rect key="frame" x="18" y="40" width="324" height="18"/>
+                                                        <rect key="frame" x="18" y="41" width="328" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="14" id="hYQ-xw-xPa"/>
                                                         </constraints>
@@ -91,7 +90,7 @@
                                             </view>
                                         </box>
                                         <button horizontalHuggingPriority="750" verticalHuggingPriority="750" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="297">
-                                            <rect key="frame" x="582" y="5" width="25" height="25"/>
+                                            <rect key="frame" x="582" y="4" width="25" height="25"/>
                                             <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" tag="1" inset="2" id="812">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -101,13 +100,13 @@
                                             </connections>
                                         </button>
                                         <box autoresizesSubviews="NO" borderType="line" title="Metadata and color profiles" translatesAutoresizingMaskIntoConstraints="NO" id="1043">
-                                            <rect key="frame" x="148" y="134" width="460" height="180"/>
+                                            <rect key="frame" x="146" y="134" width="462" height="180"/>
                                             <view key="contentView" id="caY-Pc-Rfs">
-                                                <rect key="frame" x="1" y="1" width="458" height="164"/>
+                                                <rect key="frame" x="3" y="3" width="456" height="162"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <button translatesAutoresizingMaskIntoConstraints="NO" id="263">
-                                                        <rect key="frame" x="18" y="128" width="390" height="18"/>
+                                                        <rect key="frame" x="18" y="127" width="394" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="14" id="88T-3L-2Va"/>
                                                         </constraints>
@@ -120,7 +119,7 @@
                                                         </connections>
                                                     </button>
                                                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="496">
-                                                        <rect key="frame" x="36" y="108" width="280" height="14"/>
+                                                        <rect key="frame" x="36" y="106" width="279" height="14"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="14" id="AfJ-fl-cqa"/>
                                                         </constraints>
@@ -131,7 +130,7 @@
                                                         </textFieldCell>
                                                     </textField>
                                                     <button translatesAutoresizingMaskIntoConstraints="NO" id="890">
-                                                        <rect key="frame" x="18" y="80" width="392" height="18"/>
+                                                        <rect key="frame" x="18" y="79" width="396" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="14" id="v24-Zs-k2n"/>
                                                         </constraints>
@@ -144,7 +143,7 @@
                                                         </connections>
                                                     </button>
                                                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1123">
-                                                        <rect key="frame" x="36" y="60" width="347" height="14"/>
+                                                        <rect key="frame" x="36" y="58" width="347" height="14"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="14" id="Kt6-kr-BLT"/>
                                                         </constraints>
@@ -175,11 +174,11 @@
                                         <box autoresizesSubviews="NO" borderType="line" title="Enable" translatesAutoresizingMaskIntoConstraints="NO" id="1107">
                                             <rect key="frame" x="9" y="35" width="131" height="279"/>
                                             <view key="contentView" id="55p-R0-QvS">
-                                                <rect key="frame" x="1" y="1" width="129" height="263"/>
+                                                <rect key="frame" x="3" y="3" width="125" height="261"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <button horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="1085">
-                                                        <rect key="frame" x="18" y="72" width="67" height="18"/>
+                                                        <rect key="frame" x="18" y="71" width="71" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="14" id="BDo-gs-jto"/>
                                                         </constraints>
@@ -195,7 +194,7 @@
                                                         </connections>
                                                     </button>
                                                     <button horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="1086">
-                                                        <rect key="frame" x="18" y="212" width="78" height="18"/>
+                                                        <rect key="frame" x="18" y="211" width="82" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="14" id="gDL-dX-IGx"/>
                                                         </constraints>
@@ -208,7 +207,7 @@
                                                         </connections>
                                                     </button>
                                                     <button horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="1087">
-                                                        <rect key="frame" x="18" y="152" width="86" height="18"/>
+                                                        <rect key="frame" x="18" y="151" width="90" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="14" id="XIC-mV-kdi"/>
                                                         </constraints>
@@ -221,7 +220,7 @@
                                                         </connections>
                                                     </button>
                                                     <button horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="1088">
-                                                        <rect key="frame" x="18" y="192" width="75" height="18"/>
+                                                        <rect key="frame" x="18" y="191" width="74" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="14" id="Uql-Zi-hfS"/>
                                                         </constraints>
@@ -234,7 +233,7 @@
                                                         </connections>
                                                     </button>
                                                     <button horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="1089">
-                                                        <rect key="frame" x="18" y="172" width="73" height="18"/>
+                                                        <rect key="frame" x="18" y="171" width="77" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="14" id="uSC-x3-Qgo"/>
                                                         </constraints>
@@ -247,7 +246,7 @@
                                                         </connections>
                                                     </button>
                                                     <button horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="1117">
-                                                        <rect key="frame" x="18" y="232" width="57" height="18"/>
+                                                        <rect key="frame" x="18" y="231" width="61" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="14" id="z4Z-gh-18g"/>
                                                         </constraints>
@@ -260,7 +259,7 @@
                                                         </connections>
                                                     </button>
                                                     <button horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="1090">
-                                                        <rect key="frame" x="18" y="132" width="92" height="18"/>
+                                                        <rect key="frame" x="18" y="131" width="95" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="88" id="Jlk-8Z-mbp"/>
                                                             <constraint firstAttribute="height" constant="14" id="LaR-4O-JAQ"/>
@@ -274,7 +273,7 @@
                                                         </connections>
                                                     </button>
                                                     <button horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="1091">
-                                                        <rect key="frame" x="18" y="112" width="77" height="18"/>
+                                                        <rect key="frame" x="18" y="111" width="81" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="14" id="44C-39-tHc"/>
                                                         </constraints>
@@ -287,7 +286,7 @@
                                                         </connections>
                                                     </button>
                                                     <button toolTip="Requires Node.js installed system-wide" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="78U-a4-xCR">
-                                                        <rect key="frame" x="18" y="52" width="59" height="18"/>
+                                                        <rect key="frame" x="18" y="51" width="63" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="14" id="KfP-2h-NkZ"/>
                                                         </constraints>
@@ -313,7 +312,7 @@
                                                         </connections>
                                                     </button>
                                                     <button toolTip="Guetzli always strips JPEG metadata" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="cc1-Qe-2aX" userLabel="Guetzli">
-                                                        <rect key="frame" x="18" y="92" width="65" height="18"/>
+                                                        <rect key="frame" x="18" y="91" width="69" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="14" id="B4D-H4-N9T"/>
                                                         </constraints>
@@ -326,7 +325,7 @@
                                                         </connections>
                                                     </button>
                                                     <button horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="e0a-M4-dJq">
-                                                        <rect key="frame" x="18" y="32" width="88" height="18"/>
+                                                        <rect key="frame" x="18" y="31" width="92" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="14" id="TOz-TY-K8I"/>
                                                         </constraints>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="21225" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21225"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,7 +17,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="448" y="483" width="549" height="297"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
             <value key="minSize" type="size" width="411" height="110"/>
             <value key="maxSize" type="size" width="1200" height="2000"/>
             <view key="contentView" wantsLayer="YES" id="2">
@@ -39,7 +39,6 @@
                                     <tableColumns>
                                         <tableColumn identifier="status" editable="NO" width="22" minWidth="22" maxWidth="22" headerToolTip="Optimization status" id="462">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center">
-                                                <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                             </tableHeaderCell>
@@ -58,9 +57,8 @@
                                                 </binding>
                                             </connections>
                                         </tableColumn>
-                                        <tableColumn identifier="filename" editable="NO" width="345" minWidth="100" maxWidth="1000" id="238">
+                                        <tableColumn identifier="filename" editable="NO" width="316" minWidth="100" maxWidth="1000" id="238">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="File">
-                                                <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" white="0.33333299" alpha="1" colorSpace="calibratedWhite"/>
                                             </tableHeaderCell>
@@ -81,7 +79,6 @@
                                         </tableColumn>
                                         <tableColumn identifier="originalsize" editable="NO" width="85" minWidth="60" maxWidth="120" hidden="YES" id="795">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="right" title="Original Size">
-                                                <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                             </tableHeaderCell>
@@ -104,7 +101,6 @@
                                         </tableColumn>
                                         <tableColumn identifier="size" editable="NO" width="85" minWidth="85" maxWidth="85" headerToolTip="Size of file after optimization" id="239">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="right" title="Size">
-                                                <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" white="0.33333299" alpha="1" colorSpace="calibratedWhite"/>
                                             </tableHeaderCell>
@@ -126,7 +122,6 @@
                                         </tableColumn>
                                         <tableColumn identifier="savings" editable="NO" width="85" minWidth="85" maxWidth="85" id="243">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="right" title="Savings">
-                                                <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                             </tableHeaderCell>
@@ -148,7 +143,6 @@
                                         </tableColumn>
                                         <tableColumn identifier="besttool" editable="NO" width="85" minWidth="40" maxWidth="250" hidden="YES" id="771">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Best tool">
-                                                <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                             </tableHeaderCell>
@@ -180,15 +174,15 @@
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="700" constant="100" id="xGg-Tk-Rrf"/>
                         </constraints>
-                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="641">
+                        <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="641">
                             <rect key="frame" x="-100" y="-100" width="524" height="15"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
-                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="640">
+                        <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="640">
                             <rect key="frame" x="567" y="18" width="15" height="277"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
-                        <tableHeaderView key="headerView" id="ygK-3e-IlX">
+                        <tableHeaderView key="headerView" wantsLayer="YES" id="ygK-3e-IlX">
                             <rect key="frame" x="0.0" y="0.0" width="549" height="23"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <accessibility description="Status"/>
@@ -210,7 +204,7 @@
                         <accessibility description="Status"/>
                     </textField>
                     <button toolTip="Add" verticalHuggingPriority="750" horizontalCompressionResistancePriority="900" translatesAutoresizingMaskIntoConstraints="NO" id="423" userLabel="Add">
-                        <rect key="frame" x="7.5" y="7" width="31" height="23"/>
+                        <rect key="frame" x="7" y="6" width="32" height="25"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="22" id="5V3-ih-iDb"/>
                             <constraint firstAttribute="width" priority="700" constant="30" id="vMW-e3-zXS"/>
@@ -233,7 +227,7 @@
                         </connections>
                     </progressIndicator>
                     <button horizontalHuggingPriority="300" verticalHuggingPriority="750" horizontalCompressionResistancePriority="850" translatesAutoresizingMaskIntoConstraints="NO" id="586" userLabel="Again">
-                        <rect key="frame" x="450.5" y="7" width="91" height="23"/>
+                        <rect key="frame" x="450" y="6" width="92" height="25"/>
                         <constraints>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="400" constant="90" id="6P8-XL-e9E"/>
                             <constraint firstAttribute="height" constant="22" id="f8J-J5-eqa"/>
@@ -278,7 +272,7 @@
                         </connections>
                     </customView>
                     <button toolTip="Settings" translatesAutoresizingMaskIntoConstraints="NO" id="Chx-W4-45F" userLabel="Settings Button">
-                        <rect key="frame" x="427" y="11" width="16" height="16"/>
+                        <rect key="frame" x="427" y="8" width="16" height="22"/>
                         <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="NSActionTemplate" imagePosition="only" imageScaling="proportionallyDown" inset="2" id="wBv-xY-5DV">
                             <behavior key="behavior" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
@@ -336,12 +330,6 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="makeKeyAndOrderFront:" target="526" id="531"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Check for Updates…" id="624">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="checkForUpdates:" target="623" id="625"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="362">
@@ -704,6 +692,7 @@ CA
                     </menu>
                 </menuItem>
             </items>
+            <point key="canvasLocation" x="-320" y="43"/>
         </menu>
         <customObject id="230" customClass="ImageOptimController">
             <connections>
@@ -728,12 +717,13 @@ CA
                 <string>percentDone</string>
                 <string>statusImage</string>
             </declaredKeys>
+            <classReference key="objectClass" className="File"/>
         </arrayController>
         <window title="About ImageOptim" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="526" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="185" y="471" width="312" height="475"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
             <value key="minSize" type="size" width="312" height="440"/>
             <value key="maxSize" type="size" width="350" height="480"/>
             <view key="contentView" id="527">
@@ -766,11 +756,11 @@ CA
                             </subviews>
                             <color key="backgroundColor" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </clipView>
-                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" controlSize="small" horizontal="YES" id="644">
+                        <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" controlSize="small" horizontal="YES" id="644">
                             <rect key="frame" x="-100" y="-100" width="87" height="18"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
-                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" controlSize="small" horizontal="NO" id="643">
+                        <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" controlSize="small" horizontal="NO" id="643">
                             <rect key="frame" x="-100" y="-100" width="11" height="315"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
@@ -815,6 +805,7 @@ CA
                     </connections>
                 </menuItem>
             </items>
+            <point key="canvasLocation" x="-185" y="138"/>
         </menu>
         <button verticalHuggingPriority="750" id="p50-U5-gKS">
             <rect key="frame" x="0.0" y="0.0" width="106" height="23"/>
@@ -827,9 +818,9 @@ CA
         </button>
     </objects>
     <resources>
-        <image name="NSActionTemplate" width="14" height="14"/>
-        <image name="NSAddTemplate" width="11" height="11"/>
-        <image name="NSApplicationIcon" width="128" height="128"/>
-        <image name="NSRefreshTemplate" width="11" height="15"/>
+        <image name="NSActionTemplate" width="15" height="15"/>
+        <image name="NSAddTemplate" width="14" height="13"/>
+        <image name="NSApplicationIcon" width="32" height="32"/>
+        <image name="NSRefreshTemplate" width="14" height="16"/>
     </resources>
 </document>
