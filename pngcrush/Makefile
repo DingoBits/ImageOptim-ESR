@@ -1,25 +1,17 @@
-VERSION=1.8.10
+VERSION=1.8.13
 ARCHIVE=/tmp/pngcrush-$(VERSION).tar.gz
 
-build: all
+build: pngcrush.c
 
-all: pngcrush.c
-
-$(ARCHIVE):
-	curl -L -o $(ARCHIVE) http://downloads.sourceforge.net/project/pmt/pngcrush/old-versions/1.8/$(VERSION)/pngcrush-$(VERSION).tar.gz
-
-tmp/pngcrush.c: pngcrush.patch $(ARCHIVE)
+pngcrush.c:
 	test -d tmp || mkdir -p tmp
-	tar xzf $(ARCHIVE) -C tmp --strip-components=1 --exclude=Makefile
-
-pngcrush.c: tmp/pngcrush.c
-	( cd tmp; patch --forward -p1 < ../pngcrush.patch )
+	( cd tmp; curl -L https://downloads.sourceforge.net/project/pmt/pngcrush/$(VERSION)/pngcrush-$(VERSION).tar.gz | tar xz --strip-components=1 --exclude=Makefile )
 	-rm tmp/png.h tmp/pngconf.h 2>/dev/null
 	cp tmp/*.[ch] ./
 	touch pngcrush.c
 
 clean:
-	-rm -rf tmp *.c *.h $(ARCHIVE) patched
+	-rm -rf tmp *.c *.h
 
 install:
 

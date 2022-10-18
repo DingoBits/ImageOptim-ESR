@@ -25,3 +25,6 @@
 [submodule "oxipng/oxipng"]
 	path = oxipng/oxipng
 	url = https://github.com/shssoichiro/oxipng
+[submodule "gifsicle/orig"]
+	path = gifsicle/orig
+	url = https://github.com/kohler/gifsicle.git
