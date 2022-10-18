@@ -9,6 +9,7 @@
 #import "Transformers.h"
 
 static const char *kGuetzliContext = "guetzli";
+static const char *kPNGOUTContext = "pngout";
 static const char *kStripAllContext = "strip";
 
 @implementation PrefsController
@@ -22,6 +23,7 @@ static const char *kStripAllContext = "strip";
         [NSValueTransformer setValueTransformer:dc forName:@"DisabledColor"];
 
         [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:@"GuetzliEnabled" options:0 context:(void*)kGuetzliContext];
+        [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:@"PNGOUTEnabled" options:0 context:(void*)kPNGOUTContext];
         [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:@"JpegTranStripAll" options:0 context:(void*)kStripAllContext];
     }
     return self;
@@ -32,8 +34,8 @@ static const char *kStripAllContext = "strip";
                        context:(void *)context {
     if (context == (void*)kGuetzliContext) {
         if ([defaults boolForKey:@"GuetzliEnabled"]) {
-            if (!notified) {
-                notified = YES;
+            if (!Guetzlinotified) {
+                Guetzlinotified = YES;
                 [self warnGuetzliSlowness];
             }
             if ([defaults integerForKey:@"JpegOptimMaxQuality"] < 85) {
@@ -47,7 +49,18 @@ static const char *kStripAllContext = "strip";
             [defaults setBool:NO forKey:@"JpegTranStripAllSetByGuetzli"];
             [defaults setBool:NO forKey:@"JpegTranStripAll"];
         }
-    } else if (context == (void*)kStripAllContext) {
+    }
+    #if __LP64__
+        else if (context == (void*)kPNGOUTContext) {
+            if ([defaults boolForKey:@"PNGOUTEnabled"]) {
+                if (!PNGOUTnotified) {
+                    PNGOUTnotified = YES;
+                    [self warnPNGOUTx86];
+                }
+            }
+        }
+    #endif
+     else if (context == (void*)kStripAllContext) {
         if ([defaults boolForKey:@"GuetzliEnabled"] && ![defaults boolForKey:@"JpegTranStripAll"]) {
             [defaults setBool:NO forKey:@"JpegTranStripAllSetByGuetzli"];
             [defaults setBool:NO forKey:@"GuetzliEnabled"];
@@ -62,6 +75,17 @@ static const char *kStripAllContext = "strip";
     alert.informativeText = NSLocalizedString(@"It can take up to 30 minutes per image. Your system may be unresponsive while Guetzli is running.", "alert box");
     [alert beginSheetModalForWindow:[self window] completionHandler:nil];
 }
+
+#if __LP64__
+    -(void)warnPNGOUTx86 {
+        NSAlert *alert = [NSAlert new];
+        alert.alertStyle = NSAlertStyleWarning;
+        alert.messageText = NSLocalizedString(@"PNGOUT is Intel only", "alert box");
+        alert.informativeText = NSLocalizedString(@"PNGOUT is not an open-source project and currently no Apple Silicon binary has been provided. PNGOUT can run with sub-optimal performance with if the Rosetta Translation Environment is installed.", "alert box");
+        [alert beginSheetModalForWindow:[self window] completionHandler:nil];
+    }
+#endif
+
 
 - (IBAction)showLossySettings:(id)sender {
     [self showWindow:sender];
@@ -85,7 +109,11 @@ static const char *kStripAllContext = "strip";
 
 // This doesn't belong here :(
 -(BOOL)svgSupported {
-    NSString *nodePath = @"/usr/local/bin/node";
+    #if __LP64__
+        NSString *nodePath = @"/opt/homebrew/bin/node";
+    #else
+        NSString *nodePath = @"/opt/homebrew/bin/node";
+    #endif
     return [[NSFileManager defaultManager] isExecutableFileAtPath:nodePath];
 }
 @end
