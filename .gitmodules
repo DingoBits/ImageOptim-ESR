@@ -45,3 +45,6 @@
 [submodule "dependencies/svgo"]
 	path = dependencies/svgo
 	url = https://github.com/svg/svgo.git
+[submodule "dependencies/libdeflate"]
+	path = dependencies/libdeflate
+	url = https://github.com/ebiggers/libdeflate.git
