@@ -4,10 +4,9 @@
 <dict>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>59KZTZA4XR.net.pornel.ImageOptim</string>
+		<string>com.dingobits.ImageOptim-ESR</string>
 	</array>
-         <key>com.apple.security.get-task-allow</key>
-
-         <false/>
+	<key>com.apple.security.get-task-allow</key>
+	<false/>
 </dict>
 </plist>

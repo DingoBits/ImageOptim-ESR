@@ -341,15 +341,7 @@ static void appendFormatNameIfLossyEnabled(NSUserDefaults *defs, NSString *name,
 }
 
 - (IBAction)openHomepage:(id)sender {
-    [self openURL:@"https://imageoptim.com"];
-}
-
-- (IBAction)viewSource:(id)sender {
-    [self openURL:@"https://imageoptim.com/source"];
-}
-
-- (IBAction)openDonationPage:(id)sender {
-    [self openURL:@"https://imageoptim.com/donate.html"];
+    [self openURL:@"https://github.com/DingoBits/ImageOptim-ESR"];
 }
 
 - (void)openURL:(NSString *)stringURL {
