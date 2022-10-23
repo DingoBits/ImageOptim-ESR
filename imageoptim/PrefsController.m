@@ -23,7 +23,7 @@ static const char *kStripAllContext = "strip";
         [NSValueTransformer setValueTransformer:dc forName:@"DisabledColor"];
 
         [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:@"GuetzliEnabled" options:0 context:(void*)kGuetzliContext];
-        [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:@"PNGOUTEnabled" options:0 context:(void*)kPNGOUTContext];
+        [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:@"PngOutEnabled" options:0 context:(void*)kPNGOUTContext];
         [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:@"JpegTranStripAll" options:0 context:(void*)kStripAllContext];
     }
     return self;
@@ -48,22 +48,20 @@ static const char *kStripAllContext = "strip";
         } else if ([defaults boolForKey:@"JpegTranStripAll"] && [defaults boolForKey:@"JpegTranStripAllSetByGuetzli"]) {
             [defaults setBool:NO forKey:@"JpegTranStripAllSetByGuetzli"];
             [defaults setBool:NO forKey:@"JpegTranStripAll"];
-        }
-    }
-    #if __LP64__
-        else if (context == (void*)kPNGOUTContext) {
-            if ([defaults boolForKey:@"PNGOUTEnabled"]) {
-                if (!PNGOUTnotified) {
-                    PNGOUTnotified = YES;
-                    [self warnPNGOUTx86];
-                }
+            }
+        else if (context == (void*)kStripAllContext) {
+            if ([defaults boolForKey:@"GuetzliEnabled"] && ![defaults boolForKey:@"JpegTranStripAll"]) {
+                [defaults setBool:NO forKey:@"JpegTranStripAllSetByGuetzli"];
+                [defaults setBool:NO forKey:@"GuetzliEnabled"];
             }
         }
-    #endif
-     else if (context == (void*)kStripAllContext) {
-        if ([defaults boolForKey:@"GuetzliEnabled"] && ![defaults boolForKey:@"JpegTranStripAll"]) {
-            [defaults setBool:NO forKey:@"JpegTranStripAllSetByGuetzli"];
-            [defaults setBool:NO forKey:@"GuetzliEnabled"];
+    }
+    else if (context == (void*)kPNGOUTContext) {
+        if ([defaults boolForKey:@"PngOutEnabled"]) {
+            if (!PNGOUTnotified) {
+                PNGOUTnotified = YES;
+                [self warnPNGOUTx86];
+            }
         }
     }
 }
@@ -80,8 +78,8 @@ static const char *kStripAllContext = "strip";
     -(void)warnPNGOUTx86 {
         NSAlert *alert = [NSAlert new];
         alert.alertStyle = NSAlertStyleWarning;
-        alert.messageText = NSLocalizedString(@"PNGOUT is Intel only", "alert box");
-        alert.informativeText = NSLocalizedString(@"PNGOUT is not an open-source project and currently no Apple Silicon binary has been provided. PNGOUT can run with sub-optimal performance with if the Rosetta Translation Environment is installed.", "alert box");
+        alert.messageText = NSLocalizedString(@"PNGOUT runs on Rosetta 2", "alert box");
+        alert.informativeText = NSLocalizedString(@"PNGOUT is a proprietary freeware with no arm64 binary provided. Performance will be sub-optimal comparing to native code.", "alert box");
         [alert beginSheetModalForWindow:[self window] completionHandler:nil];
     }
 #endif
