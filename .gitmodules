@@ -1,31 +1,28 @@
-[submodule "Sparkle"]
-	path = Sparkle
-	url = https://github.com/sparkle-project/Sparkle.git
-[submodule "gifsicle/gifsicle"]
+[submodule "dependencies/gifsicle"]
 	path = gifsicle/orig
 	url = https://github.com/pornel/giflossy.git
-[submodule "zopfli-png/zopfli"]
+[submodule "dependencies/zopfli"]
 	path = dependencies/zopfli
 	url = https://github.com/ImageOptim/zopfli.git
-[submodule "pngquant/src"]
+[submodule "dependencies/pngquant"]
 	path = dependencies/pngquant
 	url = https://github.com/pornel/pngquant.git
-[submodule "libjpeg/src"]
+[submodule "dependencies/mozjpeg"]
 	path = dependencies/mozjpeg
 	url = https://github.com/mozilla/mozjpeg.git
-[submodule "jpegoptim/src"]
+[submodule "dependencies/jpegoptim"]
 	path = dependencies/jpegoptim
 	url = https://github.com/tjko/jpegoptim.git
-[submodule "guetzli/guetzli"]
+[submodule "dependencies/guetzli"]
 	path = dependencies/guetzli
 	url = https://github.com/google/guetzli.git
-[submodule "svgcleaner/src"]
+[submodule "dependencies/svgcleaner"]
 	path = dependencies/svgcleaner
 	url = https://github.com/RazrFalcon/svgcleaner.git
-[submodule "oxipng/oxipng"]
+[submodule "dependencies/oxipng"]
 	path = dependencies/oxipng
 	url = https://github.com/shssoichiro/oxipng
-[submodule "gifsicle/orig"]
+[submodule "dependencies/gifsicle"]
 	path = dependencies/gifsicle
 	url = https://github.com/kohler/gifsicle.git
 [submodule "dependencies/zlib"]
@@ -34,8 +31,6 @@
 [submodule "dependencies/advpng"]
 	path = dependencies/advpng
 	url = https://github.com/amadvance/advancecomp.git
-[submodule "dependencies/gifsicle"]
-	url = https://github.com/kohler/gifsicle.git
 [submodule "dependencies/libpng"]
 	path = dependencies/libpng
 	url = https://git.code.sf.net/p/libpng/code
