@@ -1599,6 +1599,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5A27B9C2139B079A0095FC2F /* debug.xcconfig */;
 			buildSettings = {
+				GCC_UNROLL_LOOPS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.4;
 			};
 			name = Debug;
 		};
@@ -1606,6 +1608,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5A27B956139B03090095FC2F /* release.xcconfig */;
 			buildSettings = {
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_UNROLL_LOOPS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.4;
 			};
 			name = Release;
 		};

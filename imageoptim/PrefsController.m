@@ -9,7 +9,6 @@
 #import "Transformers.h"
 
 static const char *kGuetzliContext = "guetzli";
-static const char *kPNGOUTContext = "pngout";
 static const char *kStripAllContext = "strip";
 
 @implementation PrefsController
@@ -23,7 +22,6 @@ static const char *kStripAllContext = "strip";
         [NSValueTransformer setValueTransformer:dc forName:@"DisabledColor"];
 
         [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:@"GuetzliEnabled" options:0 context:(void*)kGuetzliContext];
-        [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:@"PngOutEnabled" options:0 context:(void*)kPNGOUTContext];
         [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:@"JpegTranStripAll" options:0 context:(void*)kStripAllContext];
     }
     return self;
@@ -56,14 +54,6 @@ static const char *kStripAllContext = "strip";
             }
         }
     }
-    else if (context == (void*)kPNGOUTContext) {
-        if ([defaults boolForKey:@"PngOutEnabled"]) {
-            if (!PNGOUTnotified) {
-                PNGOUTnotified = YES;
-                [self warnPNGOUTx86];
-            }
-        }
-    }
 }
 
 -(void)warnGuetzliSlowness {
@@ -73,17 +63,6 @@ static const char *kStripAllContext = "strip";
     alert.informativeText = NSLocalizedString(@"It can take up to 30 minutes per image. Your system may be unresponsive while Guetzli is running.", "alert box");
     [alert beginSheetModalForWindow:[self window] completionHandler:nil];
 }
-
-#if __LP64__
-    -(void)warnPNGOUTx86 {
-        NSAlert *alert = [NSAlert new];
-        alert.alertStyle = NSAlertStyleWarning;
-        alert.messageText = NSLocalizedString(@"PNGOUT runs on Rosetta 2", "alert box");
-        alert.informativeText = NSLocalizedString(@"PNGOUT is a proprietary freeware with no arm64 binary provided. Performance will be sub-optimal comparing to native code.", "alert box");
-        [alert beginSheetModalForWindow:[self window] completionHandler:nil];
-    }
-#endif
-
 
 - (IBAction)showLossySettings:(id)sender {
     [self showWindow:sender];

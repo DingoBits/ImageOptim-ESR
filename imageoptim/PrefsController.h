@@ -9,7 +9,6 @@
 
 @interface PrefsController : NSWindowController {
     BOOL Guetzlinotified;
-    BOOL PNGOUTnotified;
 }
 @property IBOutlet NSTabView *tabs;
 @property (readonly) BOOL svgSupported;

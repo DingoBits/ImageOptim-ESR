@@ -4,28 +4,25 @@
 
 ImageOptim 1.x [has been announced EOL with 2.x in development](https://github.com/ImageOptim/ImageOptim/issues/354). The last version was 1.8.9a1 with limited arm64 support. ESR stands for Extended Support Release. This project updates its internal components with specific optimization for Apple Silicon, and makes minor bug fixes. There are no plans to make any major changes to the codebase.
 
-|                        | Original      | ESR           | Native arm64 |
-| ---------------------- | ------------- | ------------- | ------------ |
-| advpng                 | 1.15          | 2.3           | ✓            |
-| gifsicle               | 1.8.9         | 1.9.3         | ✓            |
-| guetzli                | 1.0.1-de70ac2 | 1.0.1-214f2bb | ✓            |
-| jpegoptim              | 1.4.4         | 1.5.0         | ✓            |
-| MozJPEG                | 1.5.3         | 4.1.1         | ✓            |
-| oxipng                 | 4.0.3         | 6.0.1         | ✓            |
-| pngcrush               | 1.8.10        | 1.8.13        | ✓            |
-| pngquant               | 2.11.0        | 4.0           | ✓            |
-| pngout<sup>1</sup>     | 2015-09-20    | 2020-01-15    | ✗            |
-| svgcleaner<sup>2</sup> | 0.9.6         | 0.9.6         | ✓            |
-| SVGO                   | 1.0.5         | 2.8.0         | ✓            |
-| zopfli                 | 1.0.2         | 1.0.3         | ✓            |
+|               | Original      | ESR           | Native arm64 |
+| ------------- | ------------- | ------------- | ------------ |
+| advpng        | 1.15          | 2.5           | ✓            |
+| gifsicle      | 1.89          | 1.94          | ✓            |
+| guetzli       | 1.0.1-de70ac2 | 1.0.1-214f2bb | ✓            |
+| jpegoptim     | 1.4.4         | 1.5.4         | ✓            |
+| libjpeg-turbo | 1.5.3         | 3.0.0         | ✓            |
+| oxipng        | 4.0.3         | 8.0.0         | ✓            |
+| pngcrush      | 1.8.10        | 1.8.13        | ✓            |
+| pngquant      | 2.11.0        | 3.0.1         | ✓            |
+| pngout        | 2015-09-20    | 2023-03-22    | ✓            |
+| svgcleaner    | 0.9.6         | 0.9.6         | ✓            |
+| SVGO          | 1.0.5         | 2.8.0         | ✓            |
+| zopfli        | 1.0.2         | 1.0.3         | ✓            |
 
-1. pngout is a proprietary freeware and currently no arm64 version is available. A warning has been added when enabling on Apple Silicon.
-2. svgcleaner has been deprecated.
-3. Additionally, [zlib-dougallj](https://github.com/dougallj/zlib-dougallj) is [used on Apple Silicon systems](https://dougallj.wordpress.com/2022/08/20/faster-zlib-deflate-decompression-on-the-apple-m1-and-x86).
 ## Building
 
 Instead of painstakingly making Xcode work with autotools, I took the patented quick-and-dirty approach and separated the build into three parts.
 
-1. Build backend tools in terminal with `build_arm64.sh` and `build_x64.sh`. You can choose just build for one platform. (The script was written for arm64 so it needs a little tweak to run on x64 systems. I’ll get to it soon™. )
+1. Build backend tools in terminal with `build_arm64.sh` and `build_amd64.sh`. You can choose just build for one platform.
 2. Make universal binaries with `lipo.sh`.
 3. Build ImageOptim-ESR with `imageoptim/ImageOptim.xcodeproj`.
